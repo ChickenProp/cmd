@@ -6,4 +6,4 @@ Where the normal behaviour would break here.
 
 That's the basic use. It's more powerful than that: you can turn the shebang
 line into an arbitrary shell expression to be evaluated. For details, see
-<http://gist.github.com/492976>.
+http://gist.github.com/492976 .
