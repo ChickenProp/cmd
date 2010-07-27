@@ -5,7 +5,7 @@ use strict;
 my $cmd = shift;
 
 if ($cmd =~ /^-c /) {
-	$cmd = substr(shift, 3);
+	$cmd = substr($cmd, 3);
 	exec("sh", "-c", $cmd, @ARGV);
 }
 else {
