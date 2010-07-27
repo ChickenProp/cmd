@@ -1,9 +1,13 @@
 #! /usr/bin/env perl
+use warnings;
+use strict;
 
-if ($ARGV[0] =~ /^-c /) {
-	my $shell_cmd = substr(shift, 3);
-	exec("sh", "-c", $shell_cmd, @ARGV);
+my $cmd = shift;
+
+if ($cmd =~ /^-c /) {
+	$cmd = substr(shift, 3);
+	exec("sh", "-c", $cmd, @ARGV);
 }
 else {
-	exec("sh", "-c", join(" ", @ARGV));
+	exec("sh", "-c", qq{$cmd "\$0" "\$@"}, @ARGV);
 }
